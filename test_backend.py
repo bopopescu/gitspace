@@ -66,7 +66,7 @@ class TestContainerBroker(unittest.TestCase):
             curs = conn.cursor()
             curs.execute('SELECT 1')
             self.assertEqual(curs.fetchall()[0][0], 1)
-            curs.execute("SELECT name FROM sqlite_master WHERE type='table';")
+            curs.execute("SELECT name FROM sqlite_main WHERE type='table';")
             self.assertEqual(self.expected_db_tables,
                              {row[0] for row in curs.fetchall()})
         # check the update trigger
